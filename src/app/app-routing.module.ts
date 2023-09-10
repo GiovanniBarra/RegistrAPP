@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'recuperar-c',
     loadChildren: () => import('./pages/recuperar-c/recuperar-c.module').then( m => m.RecuperarCPageModule)
   },
+  {
+    path: 'home-usuario',
+    loadChildren: () => import('./pages/home-usuario/home-usuario.module').then( m => m.HomeUsuarioPageModule)
+  },
 ];
 
 @NgModule({

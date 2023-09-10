@@ -6,11 +6,11 @@
 
   <form #formregister="ngForm" (ngSubmit)="onsubmit()">
     <ion-item class="tituloysubtitulo">
-      <ion-input name="email" type="email" labelPlacement="floating" label="correo" required aria-label="correo"></ion-input>
+      <ion-input name="email" type="email" labelPlacement="floating" label="correo" required aria-label="correo" [(ngModel)]="usuario.username"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input name="contraseña" type="password" labelPlacement="floating" label="contraseña" required aria-label="contraseña"></ion-input>
+      <ion-input name="contraseña" type="password" labelPlacement="floating" label="contraseña" required aria-label="contraseña" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
 
     <ion-button class="boton" expand="full" color="secondary" type="submit" shape="round" [disabled]="formregister.invalid">
