@@ -1,0 +1,25 @@
+<ion-content class="ion-padding" color="dark">
+  <ion-text>
+    <div><h1 class="titulo"><strong>Bienvenido a RegistrAPP</strong></h1></div>
+    <div><h2 class="sub-titulo">"Registrate"</h2></div>
+  </ion-text>
+
+  <form #formregister="ngForm" (ngSubmit)="onsubmit()">
+    <ion-item class="item">
+    <ion-input name="nombre-completo" type="text" labelPlacement="floating" label="nombre" required aria-label="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item class="item">
+      <ion-input name="email" type="email" labelPlacement="floating" label="correo" required aria-label="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input name="contraseña" type="password" labelPlacement="floating" label="contraseña" required aria-label="contraseña"></ion-input>
+    </ion-item>
+
+    <ion-button class="boton" expand="full" type="submit" color="secondary" shape="round" [disabled]="formregister.invalid">
+      Register
+    </ion-button>
+  </form>
+
+</ion-content>
