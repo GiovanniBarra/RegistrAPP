@@ -1,7 +1,7 @@
 <ion-content class="ion-padding" color="dark">
   <ion-text >
-    <div><h1 class="titulo"><strong>Bienvenido a RegistrAPP</strong></h1></div>
-    <div><h2 class="sub-titulo">"Registrate"</h2></div>
+    <div><h1 class="animate__animated animate__pulse animate__infinite" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong>Bienvenido a RegistrAPP</strong></h1></div>
+    <div><h2 class="animate__animated animate__pulse animate__infinite">"Ingresa"</h2></div>
   </ion-text>
 
   <form #formregister="ngForm" (ngSubmit)="onsubmit()">
@@ -17,7 +17,7 @@
       Entrar
     </ion-button>
   </form>
-  <div><p routerLink="">¿olvidaste tu contraseña?</p></div>
+  <div><p routerLink="/recuperar-c">¿olvidaste tu contraseña?</p></div>
   <div><p routerLink="/register">¿no tienes cuenta?</p></div>
 
 </ion-content>

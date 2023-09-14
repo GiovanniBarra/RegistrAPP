@@ -1,10 +1,10 @@
 <ion-content class="ion-padding" color="dark">
   <ion-text>
-    <div><h1 class="titulo"><strong>Bienvenido a RegistrAPP</strong></h1></div>
-    <div><h2 class="sub-titulo">"Registrate"</h2></div>
+    <div><h1 class="titulo animate__animated animate__pulse animate__infinite"><strong>Bienvenido a RegistrAPP</strong></h1></div>
+    <div><h2 class="sub-titulo animate__animated animate__pulse animate__infinite">"Registrate"</h2></div>
   </ion-text>
 
-  <form #formregister="ngForm" (ngSubmit)="onsubmit()">
+  <form #formregister="ngForm" >
     <ion-item class="item">
     <ion-input name="nombre-completo" type="text" labelPlacement="floating" label="nombre" required aria-label="nombre"></ion-input>
     </ion-item>
@@ -17,7 +17,7 @@
       <ion-input name="contraseña" type="password" labelPlacement="floating" label="contraseña" required aria-label="contraseña"></ion-input>
     </ion-item>
 
-    <ion-button class="boton" expand="full" type="submit" color="secondary" shape="round" [disabled]="formregister.invalid">
+    <ion-button (click)="register()" class="boton" expand="full" type="submit" color="secondary" shape="round" [disabled]="formregister.invalid">
       Register
     </ion-button>
   </form>

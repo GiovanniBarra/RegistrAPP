@@ -1,13 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>recuperar_c</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding" color="dark">
+  
+  <div><h1 class="animate__animated animate__pulse animate__infinite" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong>Bienvenido a RegistrAPP</strong></h1></div>
+  <div><h2 class="animate__animated animate__pulse animate__infinite"> Ingrese su correo para recuperar su contraseña</h2></div>
+  <form #formregister="ngForm" >
+    <ion-item class="tituloysubtitulo">
+      <ion-input name="email" type="email" labelPlacement="floating" label="Correo" required aria-label="correo"></ion-input>
+    </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recuperar_c</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-button (click)="recuperarContrasena()" class="boton" expand="full" color="secondary" type="submit" shape="round">
+      Recuperar Contraseña
+    </ion-button>
+  </form>
 </ion-content>

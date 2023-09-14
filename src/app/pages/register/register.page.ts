@@ -7,18 +7,30 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage  {
 
   constructor(
     private router:Router,
     private alertControler:AlertController,
     ) { }
 
-    onsubmit(){
-      this.router.navigate(["/login"])
+    register() {
+      this.router.navigate(["/login"]);
+      this.alerta();
     }
 
-  ngOnInit() {
+    async alerta() 
+  {
+    const alert = await this.alertControler.create({
+      header: "Aviso",
+      subHeader: "",
+      message: "Su cuenta a sido creada con exito",
+      buttons: ['OK'],
+      backdropDismiss: true,
+    });
+
+    await alert.present();
+
   }
 
 }
