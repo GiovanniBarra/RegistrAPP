@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -9,10 +9,25 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomeUsuarioPage  {
 
+  nombre:string=''
+
   constructor(
+    private ActivatedRoute: ActivatedRoute,
     private router: Router,
-    private AlertController: AlertController,
-  ) { }
+    private alertcontroler: AlertController,
+  ) 
+  {
+    ActivatedRoute.queryParams.subscribe
+    (
+      params => 
+      {
+        if (params["usuario"])
+        {
+          this.nombre=params["usuario"]
+        }
+      }
+    )
+  }
 
   cerrarSesion() {
     this.router.navigate(["/login"]);
@@ -21,7 +36,7 @@ export class HomeUsuarioPage  {
 
   async alerta() 
   {
-    const alert = await this.AlertController.create({
+    const alert = await this.alertcontroler.create({
       header: "Aviso",
       subHeader: "Adios",
       message: "su sesion se a cerrado con exito",
@@ -32,5 +47,7 @@ export class HomeUsuarioPage  {
     await alert.present();
 
   }
+
+
 
 }

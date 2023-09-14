@@ -21,21 +21,22 @@ export class LoginPage implements OnInit {
     ) { }
 
 onsubmit(){
-  if(this.usuario.username=="admin@gmail.com" && this.usuario.password=="12345")
-  {
-    let user: NavigationExtras=
+  let user: NavigationExtras=
     {
       queryParams:
       {
         usuario: this.usuario.username,
       }
     }
+  if(this.usuario.username=="admin@gmail.com" && this.usuario.password=="12345")
+  {
+    
     this.router.navigate(["/home"],user)
   }
 
   if(this.usuario.username=="alumno@gmail.com" && this.usuario.password=="12345")
   {
-    this.router.navigate(["/home-usuario"])
+    this.router.navigate(["/home-usuario"],user)
   }
   
     }
