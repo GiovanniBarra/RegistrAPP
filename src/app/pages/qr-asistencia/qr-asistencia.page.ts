@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-qr-asistencia',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QrAsistenciaPage implements OnInit {
 
-  constructor() { }
+  constructor
+  (
+    private router: Router,
+    private alertcontroler: AlertController,
+  ) { }
+
+  cerrarSesion() {
+    this.router.navigate(["/login"]);
+  }
 
   ngOnInit() {
   }
