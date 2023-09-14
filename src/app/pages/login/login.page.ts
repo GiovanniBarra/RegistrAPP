@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 
@@ -23,7 +23,14 @@ export class LoginPage implements OnInit {
 onsubmit(){
   if(this.usuario.username=="admin@gmail.com" && this.usuario.password=="12345")
   {
-    this.router.navigate(["/home"])
+    let user: NavigationExtras=
+    {
+      queryParams:
+      {
+        usuario: this.usuario.username,
+      }
+    }
+    this.router.navigate(["/home"],user)
   }
 
   if(this.usuario.username=="alumno@gmail.com" && this.usuario.password=="12345")

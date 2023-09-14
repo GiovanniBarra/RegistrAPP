@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -9,10 +9,25 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
 
+  nombre:string=''
+
   constructor(
+    private activatedRoute: ActivatedRoute,
     private router: Router,
     private alertcontroler: AlertController,
-  ) { }
+  ) 
+  {
+    activatedRoute.queryParams.subscribe
+    (
+      params => 
+      {
+        if (params["usuario"])
+        {
+          this.nombre=params["usuario"]
+        }
+      }
+    )
+  }
 
   cerrarSesion() {
     this.router.navigate(["/login"]);
